@@ -1,0 +1,140 @@
+-- Bandas
+INSERT INTO performers (name, type, country, founded, born, died) VALUES ('The Rolling Stones', 'Band', 'United Kingdom', 1962, null, null);
+INSERT INTO performers (name, type, country, founded, born, died) VALUES ('Led Zeppelin', 'Band', 'United Kingdom', 1968, null, null);
+INSERT INTO performers (name, type, country, founded, born, died) VALUES ('Pink Floyd', 'Band', 'United Kingdom', 1965, null, null);
+INSERT INTO performers (name, type, country, founded, born, died) VALUES ('Nirvana', 'Band', 'United States', 1987, null, null);
+INSERT INTO performers (name, type, country, founded, born, died) VALUES ('Radiohead', 'Band', 'United Kingdom', 1985, null, null);
+-- Solistas
+INSERT INTO performers (name, type, country, born, died, founded) VALUES ('David Bowie', 'Solo', 'United Kingdom', 1947, 2016, null);
+INSERT INTO performers (name, type, country, born, died, founded) VALUES ('Prince', 'Solo', 'United States', 1958, 2016, null);
+INSERT INTO performers (name, type, country, born, died, founded) VALUES ('Whitney Houston', 'Solo', 'United States', 1963, 2012, null);
+INSERT INTO performers (name, type, country, born, died, founded) VALUES ('Freddie Mercury', 'Solo', 'United Kingdom', 1946, 1991, null);
+INSERT INTO performers (name, type, country, born, died, founded) VALUES ('Beyoncé', 'Solo', 'United States', 1981, null, null);
+
+
+
+-- The Beatles
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('The Beatles', 1963, 'Please Please Me', 'Rock');
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('The Beatles', 1965, 'Help!', 'Rock');
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('The Beatles', 1966, 'Revolver', 'Rock');
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('The Beatles', 1968, 'The Beatles (White Album)', 'Rock');
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('The Beatles', 1969, 'Abbey Road', 'Rock');
+-- Michael Jackson
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('Michael Jackson', 1979, 'Off the Wall', 'Pop');
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('Michael Jackson', 1987, 'Bad', 'Pop');
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('Michael Jackson', 1991, 'Dangerous', 'Pop');
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('Michael Jackson', 1995, 'HIStory', 'Pop');
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('Michael Jackson', 2001, 'Invincible', 'Pop');
+-- Queen
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('Queen', 1974, 'Sheer Heart Attack', 'Rock');
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('Queen', 1977, 'News of the World', 'Rock');
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('Queen', 1980, 'The Game', 'Rock');
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('Queen', 1984, 'The Works', 'Rock');
+INSERT INTO albums_by_performer (performer, year, title, genre) VALUES ('Queen', 1986, 'A Kind of Magic', 'Rock');
+
+
+
+
+-- Thriller (Michael Jackson)
+INSERT INTO tracks_by_album (album_title, album_year, number, title, length, genre) VALUES ('Thriller', 1982, 1, 'Wanna Be Startin'' Somethin''', 363, 'Pop');
+INSERT INTO tracks_by_album (album_title, album_year, number, title, length, genre) VALUES ('Thriller', 1982, 2, 'Thriller', 357, 'Pop');
+INSERT INTO tracks_by_album (album_title, album_year, number, title, length, genre) VALUES ('Thriller', 1982, 3, 'Beat It', 258, 'Pop');
+INSERT INTO tracks_by_album (album_title, album_year, number, title, length, genre) VALUES ('Thriller', 1982, 4, 'Billie Jean', 294, 'Pop');
+INSERT INTO tracks_by_album (album_title, album_year, number, title, length, genre) VALUES ('Thriller', 1982, 5, 'Human Nature', 246, 'Pop');
+INSERT INTO tracks_by_album (album_title, album_year, number, title, length, genre) VALUES ('Thriller', 1982, 6, 'P.Y.T. (Pretty Young Thing)', 238, 'Pop');
+INSERT INTO tracks_by_album (album_title, album_year, number, title, length, genre) VALUES ('Thriller', 1982, 7, 'The Lady in My Life', 300, 'Pop');
+-- Abbey Road (The Beatles)
+INSERT INTO tracks_by_album (album_title, album_year, number, title, length, genre) VALUES ('Abbey Road', 1969, 1, 'Come Together', 259, 'Rock');
+INSERT INTO tracks_by_album (album_title, album_year, number, title, length, genre) VALUES ('Abbey Road', 1969, 2, 'Something', 183, 'Rock');
+INSERT INTO tracks_by_album (album_title, album_year, number, title, length, genre) VALUES ('Abbey Road', 1969, 3, 'Maxwell''s Silver Hammer', 207, 'Rock');
+INSERT INTO tracks_by_album (album_title, album_year, number, title, length, genre) VALUES ('Abbey Road', 1969, 4, 'Oh! Darling', 207, 'Rock');
+INSERT INTO tracks_by_album (album_title, album_year, number, title, length, genre) VALUES ('Abbey Road', 1969, 5, 'Octopus''s Garden', 170, 'Rock');
+INSERT INTO tracks_by_album (album_title, album_year, number, title, length, genre) VALUES ('Abbey Road', 1969, 6, 'I Want You (She''s So Heavy)', 467, 'Rock');
+INSERT INTO tracks_by_album (album_title, album_year, number, title, length, genre) VALUES ('Abbey Road', 1969, 7, 'Here Comes the Sun', 185, 'Rock');
+
+
+
+-- Rock
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Rock', 1967, 'Sgt. Pepper''s Lonely Hearts Club Band', 'The Beatles');
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Rock', 1969, 'Abbey Road', 'The Beatles');
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Rock', 1975, 'A Night at the Opera', 'Queen');
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Rock', 1971, 'Led Zeppelin IV', 'Led Zeppelin');
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Rock', 1973, 'The Dark Side of the Moon', 'Pink Floyd');
+-- Pop
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Pop', 1982, 'Thriller', 'Michael Jackson');
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Pop', 1987, 'Bad', 'Michael Jackson');
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Pop', 2011, '21', 'Adele');
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Pop', 2015, '25', 'Adele');
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Pop', 2003, 'Dangerously in Love', 'Beyoncé');
+-- Metal
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Metal', 1991, 'Metallica', 'Metallica');
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Metal', 1986, 'Master of Puppets', 'Metallica');
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Metal', 1984, 'Ride the Lightning', 'Metallica');
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Metal', 1983, 'Kill ''Em All', 'Metallica');
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Metal', 1996, 'Load', 'Metallica');
+-- Grunge
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Grunge', 1991, 'Nevermind', 'Nirvana');
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Grunge', 1993, 'In Utero', 'Nirvana');
+INSERT INTO albums_by_genre (genre, year, title, performer) VALUES ('Grunge', 1994, 'MTV Unplugged in New York', 'Nirvana');
+
+
+
+-- The Beatles
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Please Please Me', 1963, 'The Beatles', 'Rock');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Help!', 1965, 'The Beatles', 'Rock');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Revolver', 1966, 'The Beatles', 'Rock');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Sgt. Pepper''s Lonely Hearts Club Band', 1967, 'The Beatles', 'Rock');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Abbey Road', 1969, 'The Beatles', 'Rock');
+-- Michael Jackson
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Off the Wall', 1979, 'Michael Jackson', 'Pop');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Thriller', 1982, 'Michael Jackson', 'Pop');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Bad', 1987, 'Michael Jackson', 'Pop');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Dangerous', 1991, 'Michael Jackson', 'Pop');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('HIStory', 1995, 'Michael Jackson', 'Pop');
+-- Queen
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Sheer Heart Attack', 1974, 'Queen', 'Rock');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('A Night at the Opera', 1975, 'Queen', 'Rock');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('News of the World', 1977, 'Queen', 'Rock');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('The Game', 1980, 'Queen', 'Rock');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('The Works', 1984, 'Queen', 'Rock');
+-- Metallica
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Kill ''Em All', 1983, 'Metallica', 'Metal');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Ride the Lightning', 1984, 'Metallica', 'Metal');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Master of Puppets', 1986, 'Metallica', 'Metal');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Metallica', 1991, 'Metallica', 'Metal');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Load', 1996, 'Metallica', 'Metal');
+-- Nirvana
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('Nevermind', 1991, 'Nirvana', 'Grunge');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('In Utero', 1993, 'Nirvana', 'Grunge');
+INSERT INTO albums_by_title (title, year, performer, genre) VALUES ('MTV Unplugged in New York', 1994, 'Nirvana', 'Grunge');
+
+
+
+
+INSERT INTO tracks_by_title (title, album_year, album_title, number, length, genre) VALUES ('Bohemian Rhapsody', 1975, 'A Night at the Opera', 1, 354, 'Rock');
+INSERT INTO tracks_by_title (title, album_year, album_title, number, length, genre) VALUES ('Stairway to Heaven', 1971, 'Led Zeppelin IV', 4, 482, 'Rock');
+INSERT INTO tracks_by_title (title, album_year, album_title, number, length, genre) VALUES ('Smells Like Teen Spirit', 1991, 'Nevermind', 1, 301, 'Grunge');
+
+
+
+
+INSERT INTO users (id, name) VALUES (uuid(), 'Alice Johnson');
+INSERT INTO users (id, name) VALUES (uuid(), 'Bob Wilson');
+INSERT INTO users (id, name) VALUES (uuid(), 'Charlie Brown');
+INSERT INTO users (id, name) VALUES (uuid(), 'Diana Miller');
+INSERT INTO users (id, name) VALUES (uuid(), 'Eva Davis');
+
+
+
+-- Usuario 1
+INSERT INTO tracks_by_user (id, month, timestamp, album_title, album_year, number, title, length) 
+VALUES (<user1_uuid>, '2023-10-01', '2023-10-01 08:15:00', 'Thriller', 1982, 2, 'Thriller', 357);
+-- Usuario 2
+INSERT INTO tracks_by_user (id, month, timestamp, album_title, album_year, number, title, length) 
+VALUES (<user2_uuid>, '2023-10-01', '2023-10-01 12:30:00', 'Abbey Road', 1969, 7, 'Here Comes the Sun', 185);
+-- Usuario 3
+INSERT INTO tracks_by_user (id, month, timestamp, album_title, album_year, number, title, length) 
+VALUES (<user3_uuid>, '2023-10-01', '2023-10-01 18:45:00', 'Nevermind', 1991, 1, 'Smells Like Teen Spirit', 301);
+
+
+

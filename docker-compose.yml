@@ -1,78 +1,53 @@
-# services:
-#   cassandra1:
-#     image: cassandra:latest
-#     container_name: cassandra1
-#     ports:
-#       - "9042:9042"
-#     environment:
-#       - CASSANDRA_CLUSTER_NAME=TestCluster
-#       - CASSANDRA_DC=dc1
-#       - CASSANDRA_RACK=rack1
-#       - CASSANDRA_SEEDS=cassandra1
-
-#   cassandra2:
-#     image: cassandra:latest
-#     container_name: cassandra2
-#     environment:
-#       - CASSANDRA_CLUSTER_NAME=TestCluster
-#       - CASSANDRA_DC=dc1
-#       - CASSANDRA_RACK=rack2
-#       - CASSANDRA_SEEDS=cassandra1
-
-#   cassandra3:
-#     image: cassandra:latest
-#     container_name: cassandra3
-#     environment:
-#       - CASSANDRA_CLUSTER_NAME=TestCluster
-#       - CASSANDRA_DC=dc1
-#       - CASSANDRA_RACK=rack3
-#       - CASSANDRA_SEEDS=cassandra1
-
-
 services:
-  cassandra1:
-    image: cassandra:latest
-    container_name: cassandra1
+  cassandra-seed:
+    image: cassandra:4.1
+    container_name: cassandra-seed
+    environment:
+      - CASSANDRA_CLUSTER_NAME=MyCluster
+      - CASSANDRA_DC=datacenter1
+      - CASSANDRA_RACK=rack1
+    networks:
+      - cassandra-net
     ports:
       - "9042:9042"
+    volumes:
+      - cassandra-data-seed:/var/lib/cassandra
+
+  cassandra-node2:
+    image: cassandra:4.1
+    container_name: cassandra-node2
     environment:
-      - CASSANDRA_CLUSTER_NAME=TestCluster
-      - CASSANDRA_DC=dc1
+      - CASSANDRA_SEEDS=cassandra-seed
+      - CASSANDRA_CLUSTER_NAME=MyCluster
+      - CASSANDRA_DC=datacenter1
       - CASSANDRA_RACK=rack1
-      - CASSANDRA_SEEDS=cassandra1
-    deploy:
-      resources:
-        limits:
-          memory: 2G
-        reservations:
-          memory: 1G
+    networks:
+      - cassandra-net
+    depends_on:
+      - cassandra-seed
+    volumes:
+      - cassandra-data-node2:/var/lib/cassandra
 
-  cassandra2:
-    image: cassandra:latest
-    container_name: cassandra2
+  cassandra-node3:
+    image: cassandra:4.1
+    container_name: cassandra-node3
     environment:
-      - CASSANDRA_CLUSTER_NAME=TestCluster
-      - CASSANDRA_DC=dc1
-      - CASSANDRA_RACK=rack2
-      - CASSANDRA_SEEDS=cassandra1
-    deploy:
-      resources:
-        limits:
-          memory: 2G
-        reservations:
-          memory: 1G
+      - CASSANDRA_SEEDS=cassandra-seed
+      - CASSANDRA_CLUSTER_NAME=MyCluster
+      - CASSANDRA_DC=datacenter1
+      - CASSANDRA_RACK=rack1
+    networks:
+      - cassandra-net
+    depends_on:
+      - cassandra-seed
+    volumes:
+      - cassandra-data-node3:/var/lib/cassandra
 
-  cassandra3:
-    image: cassandra:latest
-    container_name: cassandra3
-    environment:
-      - CASSANDRA_CLUSTER_NAME=TestCluster
-      - CASSANDRA_DC=dc1
-      - CASSANDRA_RACK=rack3
-      - CASSANDRA_SEEDS=cassandra1
-    deploy:
-      resources:
-        limits:
-          memory: 2G
-        reservations:
-          memory: 1G
+networks:
+  cassandra-net:
+    driver: bridge
+
+volumes:
+  cassandra-data-seed:
+  cassandra-data-node2:
+  cassandra-data-node3:
