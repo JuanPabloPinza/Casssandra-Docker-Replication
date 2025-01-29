@@ -128,13 +128,28 @@ INSERT INTO users (id, name) VALUES (uuid(), 'Eva Davis');
 
 -- Usuario 1
 INSERT INTO tracks_by_user (id, month, timestamp, album_title, album_year, number, title, length) 
-VALUES (<user1_uuid>, '2023-10-01', '2023-10-01 08:15:00', 'Thriller', 1982, 2, 'Thriller', 357);
+VALUES (uuid(), '2023-10-01', '2023-10-01 08:15:00', 'Thriller', 1982, 2, 'Thriller', 357);
+
+INSERT INTO tracks_by_user (id, month, timestamp, album_title, album_year, number, title, length) 
+VALUES (uuid(), '2023-10-01', '2023-10-01 09:30:00', 'Abbey Road', 1969, 7, 'Here Comes the Sun', 185);
+
 -- Usuario 2
 INSERT INTO tracks_by_user (id, month, timestamp, album_title, album_year, number, title, length) 
-VALUES (<user2_uuid>, '2023-10-01', '2023-10-01 12:30:00', 'Abbey Road', 1969, 7, 'Here Comes the Sun', 185);
+VALUES (uuid(), '2023-10-01', '2023-10-01 12:30:00', 'Abbey Road', 1969, 7, 'Here Comes the Sun', 185);
+
+INSERT INTO tracks_by_user (id, month, timestamp, album_title, album_year, number, title, length) 
+VALUES (uuid(), '2023-10-01', '2023-10-01 13:45:00', 'Nevermind', 1991, 1, 'Smells Like Teen Spirit', 301);
+
 -- Usuario 3
 INSERT INTO tracks_by_user (id, month, timestamp, album_title, album_year, number, title, length) 
-VALUES (<user3_uuid>, '2023-10-01', '2023-10-01 18:45:00', 'Nevermind', 1991, 1, 'Smells Like Teen Spirit', 301);
+VALUES (uuid(), '2023-10-01', '2023-10-01 18:45:00', 'Nevermind', 1991, 1, 'Smells Like Teen Spirit', 301);
 
+INSERT INTO tracks_by_user (id, month, timestamp, album_title, album_year, number, title, length) 
+VALUES (uuid(), '2023-10-01', '2023-10-01 19:00:00', 'Thriller', 1982, 2, 'Thriller', 357);
 
+-- Más reproducciones (similares)
+INSERT INTO tracks_by_user (id, month, timestamp, album_title, album_year, number, title, length) 
+VALUES (uuid(), '2023-10-01', '2023-10-01 20:15:00', 'Metallica', 1991, 1, 'Enter Sandman', 331);
 
+INSERT INTO tracks_by_user (id, month, timestamp, album_title, album_year, number, title, length) 
+VALUES (uuid(), '2023-10-01', '2023-10-01 21:30:00', '21', 2011, 1, 'Rolling in the Deep', 228);
